@@ -34,6 +34,10 @@
         </view>
       </view>
 
+      <view class="weui-agree__text">
+        如果你还没有 Larabbs 用户可以 <navigator url="/pages/auth/register" class="weui-agree__link">注册新用户</navigator>
+      </view>
+
       <view class="weui-btn-area">
         <button class="weui-btn" type="primary" @tap="submit">登录</button>
       </view>
@@ -109,20 +113,20 @@
     }
     // 页面打开事件
     async onShow() {
-      try {
-        // 打开页面自动调用一次登录
-        let authResponse = await api.login()
+      // try {
+      //   // 打开页面自动调用一次登录
+      //   let authResponse = await api.login()
 
-        // 登录成功返回上一页
-        if (authResponse.statusCode === 201) {
-          wepy.navigateBack()
-        }
-      } catch (err) {
-        wepy.showModal({
-          title: '提示',
-          content: '服务器错误，请联系管理员'
-        })
-      }
+      //   // 登录成功返回上一页
+      //   if (authResponse.statusCode === 201) {
+      //     wepy.navigateBack()
+      //   }
+      // } catch (err) {
+      //   wepy.showModal({
+      //     title: '提示',
+      //     content: '服务器错误，请联系管理员'
+      //   })
+      // }
     }
   }
 </script>
